@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 15rem;
+  max-width: 5.625rem;
+  border: blue solid 3px;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+app-icon{
+  margin: 0.5rem 0;
+}

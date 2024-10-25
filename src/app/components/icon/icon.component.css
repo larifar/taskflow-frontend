@@ -1,9 +1,11 @@
 :host {
-  border-radius: 50%;
   border: 3px white solid;
+  transition: border-color 0.5s ease;
+  border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
-  transition: border-color 0.5s ease;
+  max-width: fit-content;
+
 }
 
 img {
@@ -29,4 +31,10 @@ img {
 .clicked {
   background-color: var(--secondary-color);
   transition: background-color 0.15s ease;
+}
+
+@media(max-width: 480px){
+  img{
+    max-width: 36px;
+  }
 }

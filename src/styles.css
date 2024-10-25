@@ -51,12 +51,13 @@ h1, h2, h3, h4, h5, h6 {
 /* css defaults */
 
 :root{
-  --primary-color: #3B3B92;
-  --font-color: #E0E0E0;
-  --background-color: #121212;
-  --secondary-color: #FF8484;
-  --tertiary-color: #FFD700;
+  --primary-color: #5E60CE;
+  --font-color: #333333;
+  --background-color: #FFFFFF;
+  --secondary-color: #FF5C5C;
+  --tertiary-color: #F2E9E4;
   --logo-font-family: "Poppins", sans-serif;
+  --logo-font-size: 2.5rem;
   --titles-font-family: "Oswald", sans-serif;
   --text-font-family: "Roboto", sans-serif;
   --text-font-size: 16px;
@@ -67,15 +68,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark-theme{
-  --primary-color: #5E60CE;
-  --font-color: #333333;
-  --background-color: #FFFFFF;
-  --secondary-color: #FF5C5C;
-  --tertiary-color: #F2E9E4;
+  --primary-color: #3B3B92;
+  --font-color: #E0E0E0;
+  --background-color: #121212;
+  --secondary-color: #FF8484;
+  --tertiary-color: #FFD700;
+
 }
 
 .logo-taskflow{
   font-family: var(--logo-font-family);
+  font-size: var(--logo-font-size);
 }
 
 h1, h2, h3, h4 {
@@ -110,6 +113,7 @@ body{
 @media(max-width: 480px){
   :root, .dark-theme{
     --text-font-size: 15px;
+    --logo-font-size: 2rem;
     --h1-size: 24px;
     --h2-size: 20px;
     --h3-size: 18px;
