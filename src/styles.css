@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /*reset css */
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
@@ -46,4 +46,73 @@ h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+/* css defaults */
+
+:root{
+  --primary-color: #3B3B92;
+  --font-color: #E0E0E0;
+  --background-color: #121212;
+  --secondary-color: #FF8484;
+  --tertiary-color: #FFD700;
+  --logo-font-family: "Poppins", sans-serif;
+  --titles-font-family: "Oswald", sans-serif;
+  --text-font-family: "Roboto", sans-serif;
+  --text-font-size: 16px;
+  --h1-size: 32px;
+  --h2-size: 28px;
+  --h3-size: 24px;
+  --h4-size: 20px;
+}
+
+.dark-theme{
+  --primary-color: #5E60CE;
+  --font-color: #333333;
+  --background-color: #FFFFFF;
+  --secondary-color: #FF5C5C;
+  --tertiary-color: #F2E9E4;
+}
+
+.logo-taskflow{
+  font-family: var(--logo-font-family);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--titles-font-family);
+}
+
+h1{
+  font-size: var(--h1-size) ;
+}
+
+h2{
+  font-size: var(--h2-size);
+}
+
+h3{
+  font-size: var(--h3-size);
+}
+
+h4{
+  font-size: var(--h4-size);
+}
+
+p, span{
+  font-family: var(--text-font-family);
+  color: var(--font-color);
+}
+
+body{
+  font-size: var(--text-font-size);
+}
+
+@media(max-width: 480px){
+  :root, .dark-theme{
+    --text-font-size: 15px;
+    --h1-size: 24px;
+    --h2-size: 20px;
+    --h3-size: 18px;
+    --h4-size: 16px;
+  }
 }
