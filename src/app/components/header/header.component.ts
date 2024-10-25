@@ -9,5 +9,7 @@ import { IconComponent } from "../icon/icon.component";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  test(){
+    console.log("clicou");
+  }
 }

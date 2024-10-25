@@ -1,6 +1,17 @@
+:host {
+  border-radius: 50%;
+  border: 3px white solid;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 img {
-max-width: 50px;
-border: 3px white solid;
-border-radius: 50%;
-object-fit: cover;
+  max-width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.clicked {
+  background-color: var(--secondary-color);
+  transition: background-color 0.15s ease;
 }

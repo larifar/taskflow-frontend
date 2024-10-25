@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-icon',
@@ -9,4 +9,15 @@ import { Component, Input } from '@angular/core';
 })
 export class IconComponent {
   @Input() path: string = "../../../assets/svg/placeholder-img.svg"
+  @Output() iconClick = new EventEmitter<void>();
+
+  isClicked = false;
+
+  onClick(){
+    this.iconClick.emit();
+    this.isClicked = true;
+    setTimeout(()=>{
+      this.isClicked = false
+    }, 300) ;
+  }
 }
