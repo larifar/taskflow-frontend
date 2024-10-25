@@ -7,6 +7,10 @@
   padding: 1rem;
 }
 
+.logo-taskflow{
+  cursor: pointer;
+}
+
 .logo-taskflow span{
   display: inline-block;
   font-size: 2.8rem;

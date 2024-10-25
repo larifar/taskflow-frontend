@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IconComponent } from "../icon/icon.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,13 @@ import { IconComponent } from "../icon/icon.component";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  test(){
-    console.log("clicou");
+  constructor(private router: Router) {}
+
+  goToUser(){
+    this.router.navigate(['/user'])
+  }
+
+  goHome(){
+    this.router.navigate([''])
   }
 }
