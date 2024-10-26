@@ -1,3 +1,4 @@
-<app-icon></app-icon>
-<app-icon></app-icon>
-<app-icon></app-icon>
+<app-icon [isDisable]="isMobile" [path]="'../../../assets/png/clipboard.png'" (iconClick)="goToTasks()"></app-icon>
+<app-icon [isDisable]="isMobile" [path]="'../../../assets/png/partnership.png'" (iconClick)="goToTasks()"></app-icon>
+<app-icon [isDisable]="isMobile" [path]="'../../../assets/png/setting.png'" (iconClick)="goToConfig()"></app-icon>
+<app-icon [isDisable]="!isMobile"></app-icon>

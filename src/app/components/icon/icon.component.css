@@ -6,6 +6,10 @@
   cursor: pointer;
   max-width: fit-content;
 
+  &.disable{
+    display: none;
+  }
+
 }
 
 img {
