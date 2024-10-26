@@ -1,0 +1,32 @@
+:host {
+  border-radius: 50%;
+  border: 3px white solid;
+  object-fit: cover;
+  cursor: pointer;
+  transition: border-color 0.5s ease;
+}
+
+img {
+  max-width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+:host:hover{
+  animation: colorChange 1.5s ease-in-out infinite;
+}
+
+@keyframes colorChange {
+  0% { border-color: red; }
+  16% { border-color: orange; }
+  33% { border-color: yellow; }
+  50% { border-color: green; }
+  66% { border-color: blue; }
+  83% { border-color: indigo; }
+  100% { border-color: violet; }
+}
+
+.clicked {
+  background-color: var(--secondary-color);
+  transition: background-color 0.15s ease;
+}
