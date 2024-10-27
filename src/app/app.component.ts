@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SideBarComponent } from "./components/side-bar/side-bar.component";
@@ -12,4 +12,9 @@ import { SideBarComponent } from "./components/side-bar/side-bar.component";
 })
 export class AppComponent {
   title = 'taskflow-web';
+  @HostBinding('class.dark-theme') isDarkTheme = false;
+
+  onThemeChange(isDark: boolean) {
+    this.isDarkTheme = isDark;
+  }
 }

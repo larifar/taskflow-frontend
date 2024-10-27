@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { IconComponent } from "../icon/icon.component";
 import { Router } from '@angular/router';
 
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   constructor(private router: Router) {}
+  isLight: boolean = true;
+
+  @Output() themeChange = new EventEmitter<boolean>();
 
   goToUser(){
     this.router.navigate(['/user'])
@@ -18,5 +21,14 @@ export class HeaderComponent {
 
   goHome(){
     this.router.navigate([''])
+  }
+
+  toggleTheme(){
+    this.isLight=!this.isLight;
+    this.themeChange.emit(!this.isLight);
+  }
+
+  changeIcon():string{
+    return this.isLight? "../../../assets/png/sol.png" : "../../../assets/png/moon.png"
   }
 }
