@@ -1,4 +1,10 @@
-<h1 class="logo-taskflow" (click)="goHome()">
-  <span>T</span><span>a</span><span>s</span><span>k</span><span>F</span><span>l</span><span>o</span><span>w</span>
-</h1>
-<app-icon [path]="'../../../assets/png/user (1).png'" (iconClick)="goToUser()"></app-icon>
+<div>
+  <h1 class="logo-taskflow" (click)="goHome()">
+    <span>T</span><span>a</span><span>s</span><span>k</span><span>F</span><span>l</span><span>o</span><span>w</span>
+  </h1>
+  <img #theme [src]="changeIcon()" alt="" (click)="toggleTheme()" />
+</div>
+<app-icon
+  [path]="'../../../assets/png/user (1).png'"
+  (iconClick)="goToUser()"
+></app-icon>

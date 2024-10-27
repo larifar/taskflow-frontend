@@ -108,6 +108,7 @@ p, span{
 
 body{
   font-size: var(--text-font-size);
+  background-color: var(--background-color);
 }
 
 @media(max-width: 480px){

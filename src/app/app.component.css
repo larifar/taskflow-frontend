@@ -1,3 +1,9 @@
+:host{
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
 app-side-bar{
   margin: 7.5rem 0 0 2rem;
 }
