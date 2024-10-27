@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SideBarComponent {
   constructor(private router: Router) {}
   isMobile = false;
+  @HostBinding('class.expanded') isExpanded = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
@@ -28,6 +29,24 @@ export class SideBarComponent {
 
   goToConfig(){
     this.router.navigate([''])
+  }
+
+  toggleOptions(){
+    this.isExpanded = !this.isExpanded;
+  }
+
+  show():boolean{
+    if(this.isMobile && this.isExpanded){
+      return false;
+    }
+    if(!this.isMobile){
+      return false;
+    }
+    return true;
+  }
+
+  iconOption(): string{
+    return this.isExpanded?  '../../../assets/png/close.png' : '../../../assets/png/plus (1).png'
   }
 
 }

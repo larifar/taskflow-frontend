@@ -12,3 +12,23 @@
 app-icon{
   margin: 0.5rem 0;
 }
+
+@media(max-width: 700px){
+  :host{
+    flex-direction: row;
+    height: 55px;
+    min-width: 55px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+
+    &.expanded{
+      max-width: 300px;
+      border-radius: 20px;
+
+      app-icon{
+        margin: 0 0.5rem;
+      }
+    }
+}
+}
