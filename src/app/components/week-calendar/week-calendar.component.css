@@ -1,0 +1,6 @@
+:host{
+  display: flex;
+  width: 1200px;
+  height: 35rem;
+  overflow-x: auto;
+}

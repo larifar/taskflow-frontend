@@ -51,11 +51,11 @@ h1, h2, h3, h4, h5, h6 {
 /* css defaults */
 
 :root{
-  --primary-color: #5E60CE;
-  --font-color: #333333;
-  --background-color: #FFFFFF;
-  --secondary-color: #FF5C5C;
-  --tertiary-color: #F2E9E4;
+  --primary-color: rgb(94, 96, 206);
+  --font-color: rgb(51, 51, 51);
+  --background-color: rgb(255, 255, 255);
+  --secondary-color: rgb(255, 92, 92);
+  --tertiary-color: rgb(242, 233, 228);
   --logo-font-family: "Poppins", sans-serif;
   --logo-font-size: 2.5rem;
   --titles-font-family: "Oswald", sans-serif;
@@ -68,11 +68,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark-theme{
-  --primary-color: #3B3B92;
-  --font-color: #E0E0E0;
-  --background-color: #121212;
-  --secondary-color: #FF8484;
-  --tertiary-color: #FFD700;
+  --primary-color: rgb(59, 59, 146);
+  --font-color: rgb(224, 224, 224);
+  --background-color: rgb(18, 18, 18);
+  --secondary-color: rgb(255, 132, 132);
+  --tertiary-color: rgb(255, 215, 0);
 
 }
 
