@@ -5,5 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: green 1px solid;
+  color: var(--font-color);
+
+  &.is-today{
+    color: var(--secondary-color);
+    background-color: var(--tertiary-color);
+  }
 }
