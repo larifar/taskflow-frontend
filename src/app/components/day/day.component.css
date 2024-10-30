@@ -7,6 +7,7 @@
   align-items: center;
   color: var(--font-color);
   text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
   &.is-today{
     color: var(--secondary-color);
@@ -23,7 +24,7 @@
 .day-week::after{
   content: "|";
   display: block;
-  color:  var(--font-color); /* Mesma cor do número */
+  color:  var(--font-color);
   font-size: 16px;
   margin-top: 4px;
   text-align: center;
