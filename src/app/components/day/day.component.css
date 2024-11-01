@@ -8,6 +8,7 @@
   color: var(--font-color);
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
   &.is-today{
     color: var(--secondary-color);
