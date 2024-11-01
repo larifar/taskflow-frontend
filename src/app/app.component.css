@@ -4,9 +4,16 @@
   height: 100vh;
   display: block;
 }
-app-side-bar{
-  margin: 7.5rem 0 0 2rem;
+
+.container-content{
+  display: flex;
+  margin-top: 3rem;
 }
+
+app-side-bar{
+  margin: 4rem 4rem 0 4rem;
+}
+
 
 @media(max-width: 700px){
   :host{

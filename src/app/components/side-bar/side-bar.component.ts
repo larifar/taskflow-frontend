@@ -1,6 +1,7 @@
-import { Component, HostBinding, HostListener } from '@angular/core';
+import { Component, HostBinding, HostListener,  Inject,  PLATFORM_ID  } from '@angular/core';
 import { IconComponent } from "../icon/icon.component";
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,17 +11,21 @@ import { Router } from '@angular/router';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
   isMobile = false;
   @HostBinding('class.expanded') isExpanded = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.isMobile = window.innerWidth <= 700;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth <= 700;
+    }
   }
 
   ngOnInit() {
-    this.isMobile = window.innerWidth <= 700;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth <= 700;
+    }
   }
 
   goToTasks(){
