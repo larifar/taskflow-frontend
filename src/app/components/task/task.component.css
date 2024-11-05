@@ -1,0 +1,11 @@
+:host {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.task {
+  border-radius: 20px;
+  width: 100%;
+}
+

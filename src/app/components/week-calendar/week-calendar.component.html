@@ -1,5 +1,11 @@
-<app-day class="is-today" day="1" weekDay="segunda"></app-day>
-<app-day day="2" weekDay="terça"></app-day>
+<app-day class="is-today" day="1" weekDay="segunda">
+  <app-task-component title="Criar componente" color="green" percentage="10" [days]="1"></app-task-component>
+  <app-task-component title="Tarefa X" color="red" percentage="5" [days]="2"></app-task-component>
+</app-day>
+<app-day day="2" weekDay="terça">
+  <app-task-component title="Criar componente" color="green" percentage="10" [days]="1"></app-task-component>
+  <app-task-component title="Tarefa X" color="red" percentage="5" [days]="2"></app-task-component>
+</app-day>
 <app-day day="3" weekDay="quarta"></app-day>
 <app-day day="4" weekDay="quinta"></app-day>
 <app-day day="5" weekDay="sexta"></app-day>
