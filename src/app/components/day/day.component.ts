@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'app-day',
@@ -10,4 +10,9 @@ import { Component, Input } from '@angular/core';
 export class DayComponent {
   @Input() day: string= "1";
   @Input() weekDay: string= "segunda";
+  @Input() isToday: boolean = false;
+
+  @HostBinding('class.is-today') get todayClass(){
+    return this.isToday
+  }
 }

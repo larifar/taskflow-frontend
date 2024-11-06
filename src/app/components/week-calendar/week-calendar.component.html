@@ -1,13 +1,15 @@
-<app-day class="is-today" day="1" weekDay="segunda">
-  <app-task-component title="Criar componente" color="green" percentage="10" [days]="1"></app-task-component>
-  <app-task-component title="Tarefa X" color="red" percentage="5" [days]="2"></app-task-component>
-</app-day>
-<app-day day="2" weekDay="terça">
-  <app-task-component title="Criar componente" color="green" percentage="10" [days]="1"></app-task-component>
-  <app-task-component title="Tarefa X" color="red" percentage="5" [days]="2"></app-task-component>
-</app-day>
-<app-day day="3" weekDay="quarta"></app-day>
-<app-day day="4" weekDay="quinta"></app-day>
-<app-day day="5" weekDay="sexta"></app-day>
-<app-day day="6" weekDay="sábado"></app-day>
-<app-day day="7" weekDay="domingo"></app-day>
+<div class="grid-container">
+  <app-day *ngFor="let day of days" [style.gridColumn]="day.column"
+   [day]="day.column" [weekDay]="day.name" [isToday]=isToday(day.column)></app-day>
+
+  <!-- Componentes de tarefa distribuídos pela semana -->
+  <app-task-component
+    *ngFor="let task of tasks"
+    [style.gridColumn]="setColumn(task.initialDay, task.final)"
+    [style.gridRow]="task.rowStart + ' / ' + task.rowEnd"
+    [title]="task.title"
+    [days]="setDeadLine(task.initialDay, task.final)"
+    [percentage]="task.percentage"
+  >
+  </app-task-component>
+</div>

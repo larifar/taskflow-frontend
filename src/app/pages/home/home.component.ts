@@ -4,7 +4,7 @@ import { WeekCalendarComponent } from '../../components/week-calendar/week-calen
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ WeekCalendarComponent],
+  imports: [WeekCalendarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
