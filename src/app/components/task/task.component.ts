@@ -14,8 +14,4 @@ export class TaskComponent {
 @Input() percentage : string = "0";
 @Input() color: string = 'gray';
 @Input() days: number = 1;
-
-@HostBinding('style.width') get hostWidth() {
-  return `calc(100% * ${this.days})`;
-}
 }

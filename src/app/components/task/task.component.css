@@ -16,7 +16,7 @@
 }
 
 .progress-bar-container {
-  background-color: #e0e0e0; /* Cor de fundo da barra de progresso */
+  background-color: #e0e0e0;
   border-radius: 5px;
   height: 8px;
   overflow: hidden;
@@ -25,7 +25,7 @@
 
 .progress-bar {
   height: 100%;
-  background-color: #81c784; /* Cor de preenchimento da barra */
+  background-color: #81c784;
 }
 
 .task p {

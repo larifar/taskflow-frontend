@@ -8,6 +8,7 @@
     [style.gridColumn]="setColumn(task.initialDay, task.final)"
     [style.gridRow]="task.rowStart + ' / ' + task.rowEnd"
     [title]="task.title"
+    [days]="setDeadLine(task.initialDay, task.final)"
   >
   </app-task-component>
 </div>

@@ -31,6 +31,10 @@ export class TestCalendarComponent {
     { title: 'Design Review', initialDay: 5, final: 7 },
   ];
 
+  setDeadLine(i : number, f: number){
+    return f - i;
+  }
+
   isToday(n: string): boolean {
     let transformed = Number(n);
     return true ? transformed === 1 : false;

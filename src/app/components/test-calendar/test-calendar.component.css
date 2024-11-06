@@ -1,5 +1,5 @@
 .grid-container {
-  background-color: #00838f;
+  background-color: var(--tertiary-color);
   display: grid;
   width: 1200px;
   min-height: 50vh;
