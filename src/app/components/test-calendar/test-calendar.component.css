@@ -8,6 +8,7 @@
   margin: 0 auto;
   position: relative;
   overflow-y: auto;
+  row-gap: 10px;
 }
 
 .day-header {
@@ -21,9 +22,9 @@
 }
 
 app-task-component {
-  background-color: #e0f7fa;
+  background-color: var(--background-color);
   padding: 10px;
-  border: 1px solid #00838f;
+  border: 1px solid var(--primary-color);
   border-radius: 20px;
   overflow: hidden;
 }

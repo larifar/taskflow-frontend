@@ -26,9 +26,11 @@ export class TestCalendarComponent {
   ];
 
   tasks: Task[] = [
-    { title: 'Reunião', initialDay: 1, final: 3 },
-    { title: 'Desenvolvimento', initialDay: 2, final: 5 },
-    { title: 'Design Review', initialDay: 5, final: 7 },
+    { title: 'Reunião', initialDay: 1, final: 3, percentage: 10 },
+    { title: 'Desenvolvimento', initialDay: 2, final: 5, percentage: 20 },
+    { title: 'Design Review', initialDay: 5, final: 7, percentage: 50 },
+    { title: 'Final', initialDay: 6, final: 7, percentage: 80 },
+    { title: 'Conceito personagem', initialDay: 1, final: 4, percentage: 100 },
   ];
 
   setDeadLine(i : number, f: number){
@@ -82,4 +84,5 @@ interface Task {
   final: number;
   rowStart?: number;
   rowEnd?: number;
+  percentage: number;
 }
