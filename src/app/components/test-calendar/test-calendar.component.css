@@ -1,0 +1,31 @@
+.grid-container {
+  background-color: #00838f;
+  display: grid;
+  width: 1200px;
+  min-height: 50vh;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 8rem auto;
+  margin: 0 auto;
+  position: relative;
+  overflow-y: auto;
+}
+
+.day-header {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.day-header {
+  grid-row: 1;
+}
+
+app-task-component {
+  background-color: #e0f7fa;
+  padding: 10px;
+  border: 1px solid #00838f;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+

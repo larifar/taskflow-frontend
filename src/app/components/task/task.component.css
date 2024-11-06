@@ -1,11 +1,36 @@
 :host {
-  position: relative;
-  text-align: center;
+  display: block;
   padding: 10px;
-  color: #fff;
+  background-color: #f1f8e9;
+  border: 2px solid #aed581;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow: hidden;
 }
-.task {
-  border-radius: 20px;
-  width: 100%;
+
+.task h2 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.progress-bar-container {
+  background-color: #e0e0e0; /* Cor de fundo da barra de progresso */
+  border-radius: 5px;
+  height: 8px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #81c784; /* Cor de preenchimento da barra */
+}
+
+.task p {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 5px 0 0;
 }
 
