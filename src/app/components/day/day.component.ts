@@ -8,7 +8,7 @@ import { Component, HostBinding, Input } from '@angular/core';
   styleUrl: './day.component.css'
 })
 export class DayComponent {
-  @Input() day: string= "1";
+  @Input() day: number= 1;
   @Input() weekDay: string= "segunda";
   @Input() isToday: boolean = false;
 

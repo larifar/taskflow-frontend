@@ -24,6 +24,7 @@
 app-task-component {
   background-color: var(--background-color);
   padding: 10px;
+  margin: 10px;
   border: 1px solid var(--primary-color);
   border-radius: 20px;
   overflow: hidden;

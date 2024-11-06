@@ -2,6 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { DayComponent } from '../day/day.component';
 import { TaskComponent } from '../task/task.component';
+import { weekDay, WeekServiceService } from '../../services/week-service.service';
 
 
 @Component({
@@ -12,9 +13,14 @@ import { TaskComponent } from '../task/task.component';
   styleUrl: './week-calendar.component.css'
 })
 export class WeekCalendarComponent {
+  constructor(private service:WeekServiceService){}
+
   ngOnInit() {
     this.setRow(this.tasks);
+    this.thisWeek = this.service.getWeekDays();
   }
+
+  thisWeek: weekDay[] = []
 
   days = [
     { name: 'Segunda', column: '1' },
@@ -38,9 +44,9 @@ export class WeekCalendarComponent {
     return f - i;
   }
 
-  isToday(n: string): boolean {
-    let transformed = Number(n);
-    return true ? transformed === 1 : false;
+  isToday(n: number): boolean {
+    const today = new Date();
+    return true ? n == today.getDay() : false;
   }
 
   setColumn(start: number, final: number): string {

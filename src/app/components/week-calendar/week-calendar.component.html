@@ -1,6 +1,6 @@
 <div class="grid-container">
-  <app-day *ngFor="let day of days" [style.gridColumn]="day.column"
-   [day]="day.column" [weekDay]="day.name" [isToday]=isToday(day.column)></app-day>
+  <app-day *ngFor="let day of thisWeek" [style.gridColumn]="day.column"
+   [day]="day.day" [weekDay]="day.week" [isToday]=isToday(day.column)></app-day>
 
   <!-- Componentes de tarefa distribuídos pela semana -->
   <app-task-component
