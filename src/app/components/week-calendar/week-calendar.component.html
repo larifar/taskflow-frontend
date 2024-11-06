@@ -1,10 +1,13 @@
-<div class="grid-container">
+<div class="grid-container" cdkDropList (cdkDropListDropped)="drop($event)">
   <app-day *ngFor="let day of thisWeek" [style.gridColumn]="day.column"
    [day]="day.day" [weekDay]="day.week" [isToday]=isToday(day.column)></app-day>
 
   <!-- Componentes de tarefa distribuídos pela semana -->
   <app-task-component
     *ngFor="let task of tasks"
+    cdkDrag
+    (cdkDragStarted)="onDragStarted($event)"
+    (cdkDragEnded)="onDragEnded($event)"
     [style.gridColumn]="setColumn(task.initialDay, task.final)"
     [style.gridRow]="task.rowStart + ' / ' + task.rowEnd"
     [title]="task.title"
