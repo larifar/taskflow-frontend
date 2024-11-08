@@ -39,6 +39,7 @@ app-task-component[cdkDrag] {
 app-task-component[cdkDrag]:active {
   cursor: grabbing;
 }
-.dragging {
+
+.cdk-drag-preview {
   cursor: grabbing !important;
 }

@@ -121,3 +121,7 @@ body{
     --h4-size: 16px;
   }
 }
+
+body.dragging * {
+  cursor: grabbing !important;
+}

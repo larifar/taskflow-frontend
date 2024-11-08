@@ -14,11 +14,16 @@ import { DragDropModule, moveItemInArray, CdkDragDrop, CdkDragStart, CdkDragEnd 
   styleUrl: './week-calendar.component.css'
 })
 export class WeekCalendarComponent {
+  initialized = false;
   constructor(private service:WeekServiceService){}
 
   ngOnInit() {
-    this.setRow(this.tasks);
-    this.thisWeek = this.service.getWeekDays();
+    if(!this.initialized){
+      this.setRow(this.tasks);
+      this.thisWeek = this.service.getWeekDays();
+      this.initialized= true;
+    }
+
   }
 
   thisWeek: weekDay[] = []
@@ -67,8 +72,8 @@ export class WeekCalendarComponent {
         const row = rows[rowIndex];
         const conflict = row.some(
           (existingTask) =>
-            task.initialDay <= existingTask.final &&
-            task.final >= existingTask.initialDay
+            task.initialDay < existingTask.final &&
+            task.final > existingTask.initialDay
         );
 
         if (!conflict) {
@@ -86,6 +91,7 @@ export class WeekCalendarComponent {
         rows.push([task]);
       }
     });
+    console.log(tasks);
   }
 }
 
