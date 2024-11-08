@@ -3,34 +3,30 @@ import { Component } from '@angular/core';
 import { DayComponent } from '../day/day.component';
 import { TaskComponent } from '../task/task.component';
 import { weekDay, WeekServiceService } from '../../services/week-service.service';
+import { DragDropModule, moveItemInArray, CdkDragDrop, CdkDragStart, CdkDragEnd } from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-week-calendar',
   standalone: true,
-  imports: [DayComponent, TaskComponent, NgFor],
+  imports: [DayComponent, TaskComponent, NgFor, DragDropModule],
   templateUrl: './week-calendar.component.html',
   styleUrl: './week-calendar.component.css'
 })
 export class WeekCalendarComponent {
+  initialized = false;
   constructor(private service:WeekServiceService){}
 
   ngOnInit() {
-    this.setRow(this.tasks);
-    this.thisWeek = this.service.getWeekDays();
+    if(!this.initialized){
+      this.setRow(this.tasks);
+      this.thisWeek = this.service.getWeekDays();
+      this.initialized= true;
+    }
+
   }
 
   thisWeek: weekDay[] = []
-
-  days = [
-    { name: 'Segunda', column: '1' },
-    { name: 'Terça', column: '2' },
-    { name: 'Quarta', column: '3' },
-    { name: 'Quinta', column: '4' },
-    { name: 'Sexta', column: '5' },
-    { name: 'Sábado', column: '6' },
-    { name: 'Domingo', column: '7' },
-  ];
 
   tasks: Task[] = [
     { title: 'Reunião', initialDay: 1, final: 3, percentage: 10 },
@@ -39,6 +35,19 @@ export class WeekCalendarComponent {
     { title: 'Final', initialDay: 6, final: 7, percentage: 80 },
     { title: 'Conceito personagem', initialDay: 1, final: 4, percentage: 100 },
   ];
+
+  drop(event: CdkDragDrop<Task[]>) {
+    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
+    this.setRow(this.tasks);
+  }
+
+  onDragStarted(event: CdkDragStart) {
+    document.body.classList.add('dragging');
+  }
+
+  onDragEnded(event: CdkDragEnd) {
+    document.body.classList.remove('dragging');
+  }
 
   setDeadLine(i : number, f: number){
     return f - i;
@@ -63,8 +72,8 @@ export class WeekCalendarComponent {
         const row = rows[rowIndex];
         const conflict = row.some(
           (existingTask) =>
-            task.initialDay <= existingTask.final &&
-            task.final >= existingTask.initialDay
+            task.initialDay < existingTask.final &&
+            task.final > existingTask.initialDay
         );
 
         if (!conflict) {
@@ -82,6 +91,7 @@ export class WeekCalendarComponent {
         rows.push([task]);
       }
     });
+    console.log(tasks);
   }
 }
 
