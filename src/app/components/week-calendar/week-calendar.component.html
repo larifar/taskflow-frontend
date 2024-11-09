@@ -13,6 +13,7 @@
     [title]="task.title"
     [days]="setDeadLine(task.initialDay, task.final)"
     [percentage]="task.percentage"
+    (click)="navigateToTask(task.id)"
   >
   </app-task-component>
 </div>

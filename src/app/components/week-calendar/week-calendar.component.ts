@@ -1,4 +1,5 @@
 import { NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { DayComponent } from '../day/day.component';
 import { TaskComponent } from '../task/task.component';
@@ -15,7 +16,7 @@ import { DragDropModule, moveItemInArray, CdkDragDrop, CdkDragStart, CdkDragEnd 
 })
 export class WeekCalendarComponent {
   initialized = false;
-  constructor(private service:WeekServiceService){}
+  constructor(private service:WeekServiceService, private router: Router){}
 
   ngOnInit() {
     if(!this.initialized){
@@ -29,11 +30,11 @@ export class WeekCalendarComponent {
   thisWeek: weekDay[] = []
 
   tasks: Task[] = [
-    { title: 'Reunião', initialDay: 1, final: 3, percentage: 10 },
-    { title: 'Desenvolvimento', initialDay: 2, final: 5, percentage: 20 },
-    { title: 'Design Review', initialDay: 5, final: 7, percentage: 50 },
-    { title: 'Final', initialDay: 6, final: 7, percentage: 80 },
-    { title: 'Conceito personagem', initialDay: 1, final: 4, percentage: 100 },
+    { id: 1, title: 'Reunião', initialDay: 1, final: 3, percentage: 10 },
+    { id: 2, title: 'Desenvolvimento', initialDay: 2, final: 5, percentage: 20 },
+    { id: 3, title: 'Design Review', initialDay: 5, final: 7, percentage: 50 },
+    { id: 4, title: 'Final', initialDay: 6, final: 7, percentage: 80 },
+    { id: 5, title: 'Conceito personagem', initialDay: 1, final: 4, percentage: 100 },
   ];
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -91,11 +92,15 @@ export class WeekCalendarComponent {
         rows.push([task]);
       }
     });
-    console.log(tasks);
+  }
+
+  navigateToTask(id: number){
+    this.router.navigate([`/task`, id]);
   }
 }
 
 interface Task {
+  id: number;
   title: string;
   initialDay: number;
   final: number;

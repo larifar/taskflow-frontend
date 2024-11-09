@@ -2,7 +2,7 @@
   <h1 class="logo-taskflow" (click)="goHome()">
     <span>T</span><span>a</span><span>s</span><span>k</span><span>F</span><span>l</span><span>o</span><span>w</span>
   </h1>
-  <img #theme [src]="changeIcon()" alt="" (click)="toggleTheme()" />
+  <img #themeIcon [src]="changeIcon()" alt="Mudar tema" (click)="toggleAnimation()" [ngClass]="{ 'animation-theme': isTransitioning }"/>
 </div>
 <app-icon
   [path]="'../../../assets/png/user (1).png'"

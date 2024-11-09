@@ -5,6 +5,6 @@ import { UserComponent } from './pages/user/user.component';
 
 export const routes: Routes = [
   {path:'', component:HomeComponent},
-  {path:'task', component:TaskComponent},
+  {path:'task/:id', component:TaskComponent},
   {path:'user', component:UserComponent}
 ];
